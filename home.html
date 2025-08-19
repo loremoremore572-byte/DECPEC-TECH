@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEPDEC IA - Home</title>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+  <div class="container">
+    <header class="animate-fade">
+      <h1>🚀 Bem-vindo ao <span class="highlight">DEPDEC IA</span></h1>
+      <p id="welcomeMsg" class="subtitle">Sua inteligência artificial personalizada!</p>
+      <p id="currentTime" class="subtitle"></p>
+    </header>
+
+    <main class="features">
+      <div class="card animate-slide">
+        ⚡ <span class="title">Rápido</span>
+        <p>Respostas instantâneas com APIs otimizadas para velocidade e desempenho.</p>
+      </div>
+
+      <div class="card animate-slide delay1">
+        🔒 <span class="title">Seguro</span>
+        <p>Proteção extra em todas as consultas para manter sua privacidade.</p>
+      </div>
+
+      <div class="card animate-slide delay2">
+        🤖 <span class="title">Inteligente</span>
+        <p>Personalizado para você, com sugestões rápidas e avatar customizável.</p>
+      </div>
+    </main>
+
+    <footer class="footer animate-fade">
+      <a href="spotify-chat.html" class="start-btn pulse">Music Dl</a>
+      <a href="index.html" class="start-btn">👉 Start Chat</a>
+      <p class="credits">Criado por <b>DepDec</b></p>
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza a hora no cabeçalho
+    function updateTime() {
+      const timeEl = document.getElementById('currentTime');
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2,'0');
+      const minutes = String(now.getMinutes()).padStart(2,'0');
+      timeEl.textContent = `Hora atual: ${hours}:${minutes}`;
+    }
+
+    // Mensagem de boas-vindas baseada no horário
+    function updateWelcome() {
+      const welcomeEl = document.getElementById('welcomeMsg');
+      const hour = new Date().getHours();
+      let greeting = 'Bem-vindo!';
+      if(hour >= 5 && hour < 12) greeting = 'Bom dia!';
+      else if(hour >= 12 && hour < 18) greeting = 'Boa tarde!';
+      else greeting = 'Boa noite!';
+      welcomeEl.textContent = `${greeting} Sua inteligência artificial personalizada!`;
+    }
+
+    updateTime();
+    updateWelcome();
+    setInterval(updateTime, 1000); // atualiza a cada segundo
+  </script>
+</body>
+</html>

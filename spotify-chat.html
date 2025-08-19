@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Downloader - DEPDEC IA</title>
+  <link rel="stylesheet" href="css/spotify-chat.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header animate-fade">
+      <div class="header-content">
+        <h1>Spotify Downloader</h1>
+        <p id="welcomeMsg">Bem-vindo, usuário!</p>
+        <p id="currentTime"></p>
+      </div>
+    </header>
+
+    <main class="chat animate-slide">
+      <div id="messages" class="messages"></div>
+    </main>
+
+    <footer class="footer">
+      <input id="chatInput" type="text" placeholder="Digite: musica (link)" />
+      <button id="sendBtn">➤</button>
+    </footer>
+
+    <p class="footer-text">Criado por DepDec</p>
+  </div>
+
+  <script src="scripts/spotify-chat.js"></script>
+  <script>
+    // Atualiza a hora no cabeçalho a cada segundo
+    function updateTime() {
+      const timeEl = document.getElementById('currentTime');
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2,'0');
+      const minutes = String(now.getMinutes()).padStart(2,'0');
+      timeEl.textContent = `Hora atual: ${hours}:${minutes}`;
+    }
+
+    // Mensagem de boas-vindas baseada no horário
+    function updateWelcome() {
+      const welcomeEl = document.getElementById('welcomeMsg');
+      const hour = new Date().getHours();
+      let greeting = 'Bem-vindo!';
+      if(hour >= 5 && hour < 12) greeting = 'Bom dia!';
+      else if(hour >= 12 && hour < 18) greeting = 'Boa tarde!';
+      else greeting = 'Boa noite!';
+      welcomeEl.textContent = greeting;
+    }
+
+    updateTime();
+    updateWelcome();
+    setInterval(updateTime, 1000); // atualiza a cada segundo
+  </script>
+</body>
+</html>

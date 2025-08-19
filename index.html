@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEPDEC IA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header animate-fade">
+      <div class="header-content">
+        <h1>DEPDEC IA</h1>
+        <p id="welcomeMsg">Bem-vindo!</p>
+        <p id="currentTime">00:00</p>
+      </div>
+      <div class="bell" id="notifBell">🔔</div>
+    </header>
+
+    <main class="chat animate-slide">
+      <div id="messages" class="messages"></div>
+    </main>
+
+    <footer class="footer">
+      <input id="inputMsg" type="text" placeholder="Digite sua mensagem..." />
+      <button id="sendBtn">➤</button>
+    </footer>
+
+    <p class="footer-text">Criado por DepDec</p>
+  </div>
+
+  <div id="notifBox" class="notif-box hidden">
+    <p>📢 Atualização: Nova versão disponível! by DepDec</p>
+  </div>
+
+  <!-- Aqui é o caminho correto para o script -->
+  <script src="scripts/script.js"></script>
+</body>
+</html>
